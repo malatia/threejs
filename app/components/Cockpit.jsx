@@ -26,13 +26,15 @@ export const Cockpit = () => {
         <CameraManager />
         <Environment preset="sunset" />
         <ambientLight intensity={0.9} color="pink" />
+        
         <Float speed={0.5} floatIntensity={0.2} rotationIntensity={0.1}>
-          <Planets />
+
           <Store/>
           <Ressources />
           <Fleet />
           <Technologies />
           <Defenses />
+          <Planets/>
           {/* <ImageScreen
             url="test_image.png"
             position={[-2, 0, -2]}
@@ -47,6 +49,7 @@ export const Cockpit = () => {
           />
         </Float>
       </Canvas>
+      
     </>
   );
 };

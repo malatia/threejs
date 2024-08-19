@@ -27,7 +27,7 @@ export const CockpitCamera = () => {
         <Environment preset="sunset" />
         <ambientLight intensity={0.9} color="pink" />
         <Float speed={0.5} floatIntensity={0.2} rotationIntensity={0.1}>
-          <Planets/>
+          
           <Store/>
           <Ressources/>
           <Fleet/>
@@ -47,6 +47,7 @@ export const CockpitCamera = () => {
           />
         </Float>
       </Canvas>
+      <Planets/>
     </>
   );
 };
