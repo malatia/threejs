@@ -5,10 +5,11 @@ import MessageScreen from "./MessageScreen";
 import { Html } from "@react-three/drei";
 import ImageScreen from "./ImageScreen";
 import { degToRad } from "three/src/math/MathUtils";
+import TechnologiesScreen from "./TechnologiesScreen";
 
 export default function Technologies() {
 
-    const [technologies, setTechnologies] = useState({ visibility: false });
+    const [technologies, setTechnologies] = useState({ visibility: true });
 
     const toggleVisibility = () => {
         setTechnologies({ visibility: !technologies.visibility });
@@ -17,12 +18,12 @@ export default function Technologies() {
   return (
     <>
       {technologies.visibility && <Html
-        position={[0, 0, -2]}
+        position={[0, 0.13, -1.5]}
         transform
-        distanceFactor={0.4}
+        distanceFactor={0.5}
         rotation={[0, 0, 0]}
       >
-        <MessageScreen />
+        <TechnologiesScreen/>
       </Html>}
       
         <ImageScreen

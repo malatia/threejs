@@ -1,7 +1,6 @@
 "use client";
 
 import React, {useState} from "react";
-import MessageScreen from "./MessageScreen";
 import { Html } from "@react-three/drei";
 import ImageScreen from "./ImageScreen";
 import { degToRad } from "three/src/math/MathUtils";
@@ -18,10 +17,10 @@ export default function Ressources() {
   return (
     <>
       {ressources.visibility && <Html
-        position={[-0.8, -0, -0.7]}
+        position={[-0.9, -0, -0.7]}
         transform
-        distanceFactor={0.45}
-        rotation={[-0.9, Math.PI / 4, 0.75]}        
+        distanceFactor={0.35}
+        rotation={[-0.7, Math.PI / 4, 0.55]}        
       >
         <RessourcesScreen/>
       </Html>}

@@ -1,14 +1,15 @@
 "use client";
 
 import React, {useState} from "react";
-import MessageScreen from "./MessageScreen";
 import { Html } from "@react-three/drei";
 import ImageScreen from "./ImageScreen";
 import { degToRad } from "three/src/math/MathUtils";
+import FleetScreen from "./FleetScreen";
+
 
 export default function Fleet() {
 
-    const [fleet, setFleet] = useState({ visibility: false });
+    const [fleet, setFleet] = useState({ visibility: true });
 
     const toggleVisibility = () => {
         setFleet({ visibility: !fleet.visibility });
@@ -17,12 +18,12 @@ export default function Fleet() {
   return (
     <>
       {fleet.visibility && <Html
-        position={[0.5, 0, -2]}
+        position={[0.50, 0, -1.1]}
         transform
-        distanceFactor={0.35}
-        rotation={[-0.8, -Math.PI / 4, -0.7]}
+        distanceFactor={0.4}
+        rotation={[-0.60, degToRad(-25), -0.40]}        
       >
-        <MessageScreen />
+        <FleetScreen />
       </Html>}
       
         <ImageScreen

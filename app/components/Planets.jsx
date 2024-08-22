@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import MessageScreen from "./MessageScreen";
 import { Html, Billboard } from "@react-three/drei";
 import ImageScreen from "./ImageScreen";
 import PlanetMenu from "./PlanetMenu";
@@ -53,10 +52,14 @@ export default function Planets() {
           onClick={toggleVisibility}
         />
 
-        <Html position={[0.26, -0.04, -0.2]}>
-          <PlanetMenu planets={planetsArray} onPlanetClick={handlePlanetClick} />
+        <Html position={[0.255, 0.00, -0.2]}>
+          {planets.visibility && (
+            <PlanetMenu
+              planets={planetsArray}
+              onPlanetClick={handlePlanetClick}
+            />
+          )}
         </Html>
-
       </Billboard>
     </>
   );

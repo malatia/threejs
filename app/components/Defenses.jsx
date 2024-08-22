@@ -1,14 +1,14 @@
 "use client";
 
 import React, {useState} from "react";
-import MessageScreen from "./MessageScreen";
 import { Html } from "@react-three/drei";
 import ImageScreen from "./ImageScreen";
 import { degToRad } from "three/src/math/MathUtils";
+import DefensesScreen from "./DefensesScreen"
 
 export default function Defenses() {
 
-    const [defenses, setDefenses] = useState({ visibility: false });
+    const [defenses, setDefenses] = useState({ visibility: true });
 
     const toggleVisibility = () => {
         setDefenses({ visibility: !defenses.visibility });
@@ -17,12 +17,12 @@ export default function Defenses() {
   return (
     <>
       {defenses.visibility && <Html
-        position={[-0.5, 0.5, -1.2]}
+        position={[-0.65, 0.02, -1.1]}
         transform
-        distanceFactor={0.35}
-        rotation={[-0.8, Math.PI / 4, 0.7]}
+        distanceFactor={0.4}
+        rotation={[-0.50, degToRad(25), 0.30]}
       >
-        <MessageScreen />
+        <DefensesScreen />
       </Html>}
 
         <ImageScreen

@@ -1,6 +1,12 @@
 "use client";
 
-import { CameraControls, Gltf, Environment, Float, OrbitControls } from "@react-three/drei";
+import {
+  CameraControls,
+  Gltf,
+  Environment,
+  Float,
+  OrbitControls,
+} from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { useState } from "react";
 import MessageScreenGroup from "./MessageScreenGroup";
@@ -22,17 +28,17 @@ export const CockpitCamera = () => {
 
   return (
     <>
-      <Canvas camera={{ position: [1,1,1], rotation: [30, 0, 0] }}>
-        <OrbitControls/>
+      <Canvas camera={{ position: [1, 1, 1], rotation: [30, 0, 0] }}>
+        <OrbitControls />
         <Environment preset="sunset" />
         <ambientLight intensity={0.9} color="pink" />
         <Float speed={0.5} floatIntensity={0.2} rotationIntensity={0.1}>
-          
-          <Store/>
-          <Ressources/>
-          <Fleet/>
-          <Technologies/>
-          <Defenses/>
+          <Planets />
+          <Store />
+          <Ressources />
+          <Fleet />
+          <Technologies />
+          <Defenses />
           {/* <ImageScreen
             url="test_image.png"
             position={[-2, 0, -2]}
@@ -47,7 +53,6 @@ export const CockpitCamera = () => {
           />
         </Float>
       </Canvas>
-      <Planets/>
     </>
   );
 };
