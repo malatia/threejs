@@ -14,11 +14,6 @@ import Technologies from "./Technologies";
 import Store from "./Store";
 
 export const Cockpit = () => {
-  const [cockPit, setCockpit] = useState({ planetsVisibility: false });
-  const togglePlanetsVisibility = () => {
-    setCockpit({ planetsVisibility: !cockPit.planetsVisibility });
-    console.log(cockPit);
-  };
 
   return (
     <>

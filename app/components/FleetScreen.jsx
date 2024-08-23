@@ -1,8 +1,15 @@
 "use client";
 
 import React from "react";
+import { use3dOgame } from "../hooks/use3dOgame";
 
 export default function FleetScreen() {
+
+  const getActivePlanet = use3dOgame(state => state.getActivePlanet)
+  const activePlanet = getActivePlanet()  
+  console.log(activePlanet);
+  
+  
   return (
     <>
       <div className="p-5 mt-5 text-center bg-gradient-to-br from-blue-200/20 to-blue-500/20 rounded-xl">
@@ -14,32 +21,32 @@ export default function FleetScreen() {
           <div className="max-w-96 mt-3 flex flex-wrap gap-3 items-end">
             <div className="max-w-28 flex flex-col items-center justify-center space-y-2 p-2 bg-black/30 rounded-md">
               <img src="ClIcon.png" />
-              <div>18.542</div>
+              <div>{activePlanet.fleet.Cle}</div>
             </div>
 
             <div className="max-w-28 flex flex-col items-center justify-center space-y-2 p-2 bg-black/30 rounded-md">
               <img src="CloIcon.png" />
-              <div>10.472</div>
+              <div>{activePlanet.fleet.Clo}</div>
             </div>
 
             <div className="max-w-28 flex flex-col items-center justify-center space-y-2 p-2 bg-black/30 rounded-md">
               <img src="CrIcon.png" />
-              <div>4.879</div>
+              <div>{activePlanet.fleet.Cr}</div>
             </div>
 
             <div className="max-w-28 flex flex-col items-center justify-center space-y-2 p-2 bg-black/30 rounded-md">
               <img src="VbIcon.png" />
-              <div>4.879</div>
+              <div>{activePlanet.fleet.Vb}</div>
             </div>
 
             <div className="max-w-28 flex flex-col items-center justify-center space-y-2 p-2 bg-black/30 rounded-md">
               <img src="TrIcon.png" />
-              <div>4.879</div>
+              <div>{activePlanet.fleet.Tr}</div>
             </div>
 
             <div className="max-w-28 flex flex-col items-center justify-center space-y-2 p-2 bg-black/30 rounded-md">
               <img src="DsIcon.png" />
-              <div>4.879</div>
+              <div>{activePlanet.fleet.Ds}</div>
             </div>
           </div>
         </div>

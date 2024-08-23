@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { Html, Billboard } from "@react-three/drei";
 import ImageScreen from "./ImageScreen";
 import PlanetMenu from "./PlanetMenu";
+import { use3dOgame } from "@/app/hooks/use3DOgame"
+
 
 export default function Planets() {
   const planetsArray = [
@@ -21,8 +23,8 @@ export default function Planets() {
     console.log(planets);
   };
 
-  const handlePlanetClick = (planetName) => {
-    console.log(`Clicked on planet: ${planetName}`);
+  const handlePlanetClick = (planetName, activePlanet) => {     
+    console.log(`Clicked on planet: ${planetName}  and active planet is : ${activePlanet}`);
     // Ajoutez ici toute autre logique que vous souhaitez exécuter lors du clic sur un bouton
   };
 
