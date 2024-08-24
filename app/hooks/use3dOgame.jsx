@@ -30,7 +30,7 @@ export const use3dOgame = create((set, get) => ({
           Ions: 10,
           computing: 10,
         },
-        resources: { metal: 1000, crystal: 1000, deuterium: 1000 },
+        resources: { Metal: 1000, Crystal: 1000, Deuterium: 1000 },
       },
       {
         name: "Cassiopeia",
@@ -58,7 +58,7 @@ export const use3dOgame = create((set, get) => ({
           Ions: 2,
           computing: 2,
         },
-        resources: { metal: 2000, crystal: 2000, deuterium: 2000 },
+        resources: { metal: 2000, Crystal: 2000, Deuterium: 2000 },
       },
       {
         name: "Andromeda",
@@ -86,7 +86,7 @@ export const use3dOgame = create((set, get) => ({
           Ions: 3,
           computing: 3,
         },
-        resources: { metal: 3000, crystal: 3000, deuterium: 3000 },
+        resources: { Metal: 3000, Crystal: 3000, Deuterium: 3000 },
       },
       {
         name: "Taureus",
@@ -114,7 +114,7 @@ export const use3dOgame = create((set, get) => ({
           Ions: 4,
           computing: 4,
         },
-        resources: { metal: 4000, crystal: 4000, deuterium: 4000 },
+        resources: { Metal: 4000, Crystal: 4000, Deuterium: 4000 },
       },
       {
         name: "Eleiasta",
@@ -142,7 +142,7 @@ export const use3dOgame = create((set, get) => ({
           Ions: 5,
           computing: 5,
         },
-        resources: { metal: 5000, crystal: 5000, deuterium: 5000 },
+        resources: { Metal: 5000, Crystal: 5000, Deuterium: 5000 },
       },
       {
         name: "Achilleus",
@@ -170,7 +170,7 @@ export const use3dOgame = create((set, get) => ({
           Ions: 6,
           computing: 6,
         },
-        resources: { metal: 6000, crystal: 6000, deuterium: 6000 },
+        resources: { Metal: 6000, Crystal: 6000, Deuterium: 6000 },
       },
       // Ajouter d'autres planètes ici
     ],
@@ -185,13 +185,24 @@ export const use3dOgame = create((set, get) => ({
       })
     ),
   activePlanetName: "Terra",
-  getActivePlanet: () =>
-  {
+  getActivePlanet: () => {
     const planet = get().empire.planets.find(
       (p) => p.name === get().activePlanetName
     );
     if (planet) {
       return planet;
     }
-  }
+  },
+  setActivePlanet: (planetName) =>
+    set((state) =>
+      produce(state, (draft) => {
+        const planet = draft.empire.planets.find((p) => p.name === planetName);
+        if (planet) {
+          draft.activePlanetName = planet.name;
+        }
+      })
+    ),
+  getPlanetsName: () => {
+    return get().empire.planets.map((planet) => planet.name);
+  },
 }));

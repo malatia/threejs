@@ -23,11 +23,6 @@ export default function Planets() {
     console.log(planets);
   };
 
-  const handlePlanetClick = (planetName, activePlanet) => {     
-    console.log(`Clicked on planet: ${planetName}  and active planet is : ${activePlanet}`);
-    // Ajoutez ici toute autre logique que vous souhaitez exécuter lors du clic sur un bouton
-  };
-
   return (
     <>
       {/* <Billboard
@@ -56,10 +51,7 @@ export default function Planets() {
 
         <Html position={[0.255, 0.00, -0.2]}>
           {planets.visibility && (
-            <PlanetMenu
-              planets={planetsArray}
-              onPlanetClick={handlePlanetClick}
-            />
+            <PlanetMenu/>
           )}
         </Html>
       </Billboard>

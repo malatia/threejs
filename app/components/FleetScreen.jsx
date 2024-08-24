@@ -5,9 +5,12 @@ import { use3dOgame } from "../hooks/use3dOgame";
 
 export default function FleetScreen() {
 
-  const getActivePlanet = use3dOgame(state => state.getActivePlanet)
-  const activePlanet = getActivePlanet()  
-  console.log(activePlanet);
+  const activePlanet = use3dOgame((state) => {
+    const planet = state.empire.planets.find(
+      (p) => p.name === state.activePlanetName
+    );    
+    return planet;
+  });
   
   
   return (
