@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { Html, Billboard } from "@react-three/drei";
 import ImageScreen from "./ImageScreen";
 import PlanetMenu from "./PlanetMenu";
-import { use3dOgame } from "@/app/hooks/use3DOgame"
 
 
 export default function Planets() {
